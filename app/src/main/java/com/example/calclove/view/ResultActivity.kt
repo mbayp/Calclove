@@ -1,21 +1,25 @@
-package com.example.calclove
+package com.example.calclove.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.calclove.R
+import com.example.calclove.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityResultBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result)
-
-        val resultTV = findViewById<TextView>(R.id.resultTV)
+        binding = ActivityResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val firstName = intent.getStringExtra("firstName")
         val secondName = intent.getStringExtra("secondName")
         val percentage = intent.getStringExtra("percentage")
         val result = intent.getStringExtra("result")
 
-        resultTV.text = "$firstName\n$secondName\n$percentage\n$result"
+        binding.resultTV.text = "$firstName\n$secondName\n$percentage\n$result"
     }
 }
+

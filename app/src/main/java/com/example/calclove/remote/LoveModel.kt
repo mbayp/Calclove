@@ -1,4 +1,4 @@
-package com.example.calclove
+package com.example.calclove.remote
 
 import com.google.gson.annotations.SerializedName
 
