@@ -1,52 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
-
-    <TextView
-        android:id="@+id/resultTV"
-        android:background="@drawable/heart_bg"
-        tools:text="kkkk"
-        android:gravity="center"
-        android:layout_width="300dp"
-        android:layout_gravity="center"
-        android:layout_height="270dp"
-        android:textSize="20sp"/>
-
-    <EditText
-        android:id="@+id/firstEd"
-        android:textSize="30sp"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/black"
-        android:textColorHint="#807E7E"
+        android:orientation="vertical"
         android:padding="12dp"
-        android:hint="first"/>
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
 
+        <TextView
+            android:id="@+id/resultTV"
+            android:background="@drawable/heart_bg"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_height="270dp"
+            android:textSize="20sp"/>
 
-    <EditText
-        android:id="@+id/secondEd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textColorHint="#807E7E"
-        android:textSize="30sp"
-        android:padding="12dp"
-        android:layout_marginTop="12dp"
-        android:hint="second"/>
+        <EditText
+            android:id="@+id/firstEd"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="#807E7E"
+            android:padding="12dp"
+            android:hint="first"/>
 
-    <Button
-        android:id="@+id/calculateBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textSize="30sp"
-        android:text="calculate"/>
+        <EditText
+            android:id="@+id/secondEd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="#807E7E"
+            android:textSize="30sp"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:hint="second"/>
+
+        <Button
+            android:id="@+id/calculateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="30sp"
+            android:text="calculate"/>
+
 
 </LinearLayout>
