@@ -7,17 +7,26 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.calclove.LoveViewModel
 import com.example.calclove.databinding.ActivityMainBinding
+import com.example.calclove.onBoarding.OnBoardingPref
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: LoveViewModel by viewModels()
+    @Inject
+    lateinit var onBoardingPref: OnBoardingPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        if(!onBoardingPref.isOnboardingCompleted()){
+            val intent = Intent(this@MainActivity, OnBoardingActivity::class.java)
+                startActivity(intent)
+
+        }
 
         binding.calculateBtn.setOnClickListener {
             val firstName = binding.firstEd.text.toString()
@@ -33,6 +42,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
             })
+
         }
 
     }
