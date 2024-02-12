@@ -39,6 +39,11 @@
             android:layout_marginTop="12dp"
             android:hint="second"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <Button
             android:id="@+id/calculateBtn"
             android:layout_width="match_parent"
@@ -47,5 +52,13 @@
             android:textSize="30sp"
             android:text="calculate"/>
 
+        <Button
+            android:id="@+id/btn_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:text="history"
+            android:textSize="30sp" />
+    </LinearLayout>
 
 </LinearLayout>

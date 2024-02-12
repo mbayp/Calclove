@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.calclove.App
 import com.example.calclove.LoveViewModel
 import com.example.calclove.databinding.ActivityMainBinding
 import com.example.calclove.onBoarding.OnBoardingPref
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if(!onBoardingPref.isOnboardingCompleted()){
-            val intent = Intent(this@MainActivity, OnBoardingActivity::class.java)
+            val intent = Intent(this, OnBoardingActivity::class.java)
                 startActivity(intent)
 
         }
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
             val secondName = binding.secondEd.text.toString()
             viewModel.getLove(firstName, secondName).observe(this@MainActivity, Observer {
                 it?.let { model ->
+
+                    App.appDatabase.LoveDao().insertLove(model)
+
                     val intent = Intent(this@MainActivity, ResultActivity::class.java).apply {
                         putExtra("firstName", model.firstName)
                         putExtra("secondName", model.secondName)
@@ -43,6 +47,10 @@ class MainActivity : AppCompatActivity() {
                 }
             })
 
+        }
+        binding.btnHistory.setOnClickListener {
+            val intent = Intent(this@MainActivity, HistoryActivity::class.java)
+            startActivity(intent)
         }
 
     }
