@@ -14,4 +14,5 @@ interface LoveApi {
         @Header("X-RapidAPI-Key") key: String = "01caf2b4d1mshd5cff5633b5324bp1e3d63jsn3b3bb154b9a8",
         @Header("X-RapidAPI-Host") host: String = "love-calculator.p.rapidapi.com"
     ) : Call<LoveModel>
+
 }

@@ -13,17 +13,17 @@ class OnBoardingAdapter(private val onClick: () -> Unit) :
 
     private val list = arrayListOf(
         OnBoardingModel(
-            "https://img.freepik.com/vetores-premium/casal-de-desenhos-animados-homem-e-mulher-segurando-um-cartao-de-coracao-nas-maos_599908-35.jpg?w=740",
+            R.raw.lottie_anim1,
             "love",
             "Desc"
         ),
         OnBoardingModel(
-            "https://static.vecteezy.com/system/resources/previews/019/816/907/non_2x/cute-couple-in-love-man-kissing-and-embracing-woman-isolated-man-and-woman-vector.jpg",
+            R.raw.lottie_anim2,
             " love",
             "Desc "
         ),
         OnBoardingModel(
-            "https://img.freepik.com/premium-vector/valentine-s-day-girl-hugs-guy-couple-love-vector-cartoon-style_313437-42.jpg?w=360",
+            R.raw.lottie_anim3,
             "love ",
             "Desc"
         ),
@@ -50,9 +50,10 @@ class OnBoardingAdapter(private val onClick: () -> Unit) :
     inner class OnBoardingViewHolder(private val binding: ItemOnboardingBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(onBoarding: OnBoardingModel) {
-            Picasso.get()
-                .load(onBoarding.image)
-                .into(binding.imgBoard)
+            onBoarding.anim?.let {
+                binding.animBoard.setAnimation(onBoarding.anim)
+                binding.animBoard.playAnimation()
+            }
             binding.tvBoard.text = onBoarding.title
             binding.tvBdTitle.text = onBoarding.description
             binding.btnStart.setOnClickListener {

@@ -1,7 +1,7 @@
 package com.example.calclove.onBoarding
 
 data class OnBoardingModel(
-    val image: String,
+    val anim: Int? = null,
     val title: String,
     val description: String
 )
